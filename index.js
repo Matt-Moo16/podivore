@@ -36,12 +36,12 @@ function generateFoodUrl(ingredients) {
 
 function generateHeader() {
     return `<section>
-    <h1>Podivore</h1>
+    <img src="images/podivore-logo.png" alt="Podivore" class="logo">
     <h2>Podcast perfect for cook time.</h2>
     <p>What is Podivore? Podivore is an app that will generate podcasts that are the length of time as a recipe.
         This app will let you choose what kind of cuisine you want, what kind of meal type that you want, input the ingridents that you have or want to use, and choose the genre of the podcast that you want to listen to.
     </p>
-    <p>*** Due to the nature of the podcast API we used, we embedded an in-app player to listen to your podcasts, but sometimes a download link for the podcast's audio file will be returned instead and will automaticall download to your device.
+    <p>Due to the nature of the podcast API we used, we embedded an in-app player to listen to your podcasts, but sometimes a download link for the podcast's audio file will be returned instead and will automaticall download to your device.
     In the event that you run into any trouble with this, simply just try to regenerate a new podcast using the Generate Recipe and Podcast Pairing with your desired ingredients. </p>
 </section>`
 }
@@ -51,16 +51,17 @@ function generateLandingPage(genres) {
 <section>
     <form>
       <div>
-          <input type="text" id="ingredients" name="ingredients" placeholder="Ex: Chicken"> 
           <label for="ingredients">Write in an Ingredient</label>
+          <input type="text" id="ingredients" name="ingredients" placeholder="Ex: Chicken"> 
       </div>
       <div>
+          <label for="genre">Choose a genre for the podcasts</label>
           <select name="genre" id="genre">
               ${generateGenreDropdown(genres)}
           </select>
-          <label for="genre">Choose a genre for the podcasts</label>
+          
       </div>
-       <button type="submit">Generate Recipe and Podcast Pairing</button>
+       <button type="submit" class="submit">Generate Recipe and Podcast Pairing</button>
 
     </form>
     <ul class="recipe"></ul>
@@ -161,11 +162,13 @@ function generateRecipe(response) {
         recipesTime = response.hits[randomNum].recipe.totalTime
     }
     const recipeCode = `
+        <div>
         <h2>${response.hits[randomNum].recipe.label}</h2>
-        <h3>${recipesTime}</h3>
+        <h3>Total Cook Time: ${recipesTime}</h3>
         <img src="${response.hits[randomNum].recipe.image}">
-        <ul>${ingredientsList}</ul>
-        <a href="${response.hits[randomNum].recipe.url}" target="_blank">Click Here To View The Recipe</a>
+        <ul class="ingredients">${ingredientsList}</ul>      
+        <a href="${response.hits[randomNum].recipe.url}" target="_blank" class="recipelink">Click Here To View The Recipe</a>
+        </div>
     `
 
     
@@ -177,8 +180,8 @@ function generatePodcast(podcast) {
     <article>
         <h2>${podcast.title_original}</h2>
         <img src="${podcast.image}" alt="${podcast.title_original}">
-        <p>${podcast.description_original}</p>
-        <iframe src="${podcast.audio }" height="170px" width="100%" style="width: 1px; min-width: 100%;" loading="lazy" frameborder="0" scrolling="no"></iframe>   
+        <p class="description">${podcast.description_original}</p>
+        <iframe src="${podcast.audio }" height="170px" loading="lazy" frameborder="0" scrolling="no"></iframe>   
     </article>`
     
 

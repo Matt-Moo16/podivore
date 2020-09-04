@@ -1,0 +1,200 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300&family=Rubik:wght@500&display=swap');
+
+body {
+    /*background-image: url("images/table-with-food.jpeg");*/
+    background-color: #b5d6d6;
+    font-family: 'Roboto Condensed', sans-serif;
+    text-align: center;
+    font-size: 18px;
+}
+
+
+
+form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: 25px;
+}
+
+h2 {
+    font-size: 35px;
+    margin-bottom: 15px;
+    font-family: 'Rubik', sans-serif;
+}
+
+div {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+p {
+    margin: 25px;
+}
+
+input {
+    background-color: #e69597;
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+    border-radius: 5px;
+    color: white;
+    text-align: center;
+}
+
+select {
+    background-color: #e69597;
+    border-style: solid;
+    border-width: 3px;
+    border-color: white;
+    border-radius: 5px;
+    color: white;
+    
+}
+
+.submit {
+    border-radius: 10px;
+    font-weight: bold;
+    margin-top: 10px;
+    border-style: solid;
+    border-width: 5px;
+    border-color: white;
+    color: white;
+    background-color: #e69597;
+    
+    
+}
+.submit:hover {
+    background-color: #b5d6d6;
+    border-color: #e69597;
+    border-style: groove;
+    border-width: 5px;
+}
+
+.logo {
+    max-width: 100%;
+    min-width: auto;
+    transform-style: preserve-3d;
+    transition: all 3s ease-in-out;
+}
+
+.logo:hover {
+    transform: rotateY(1080deg);
+}
+
+ul {
+    list-style-type: none;
+}
+
+img {
+
+    border-radius: 50%;
+   
+
+}
+
+iframe {
+    max-width: auto;
+    min-width: 60%;
+    margin-left: 0px;
+    margin-right: 0px;
+}
+
+a.recipelink:link {
+    font-size: 20px;
+    color: #ff7477;
+    background-color: white;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 10px;
+    padding: 5px 20px 5px 20px;
+    text-decoration: none;
+}
+
+a.recipelink:visited {
+    color: white;
+    background-color: #ff7477;
+    border-style: solid;
+    border-width: 3px;
+    border-radius: 10px;
+    padding-right: 20px;
+    padding-left: 20px;
+    text-decoration: none;
+}
+
+a.recipelink:hover {
+    background-color: #9cf6f6;
+    border-color: #ff7477;
+}
+
+a.recipelink:active {
+    background-color: black;
+}
+
+.ingredients {
+    margin: 25px auto 15px auto;
+    list-style-position: inside;
+    
+    
+    
+
+}
+
+article {
+    text-align: center;
+    
+}
+
+footer img {
+    width: 100px;
+   
+}
+
+
+@media all and (min-width: 750px) {
+    .logo {
+        width: 700px;
+    }
+
+    form {
+        display: flex;
+        flex-direction: row;
+    }
+    input, label {
+        display: block;
+    }
+
+    select, label {
+        display: block;
+    }
+}
+
+@media all and (min-width: 1200px) {
+
+    p {
+        font-size: 24px;
+    }
+
+    .ingredients {
+        font-size: 24px;
+        
+    }
+
+   
+    
+    label {
+        padding-bottom: 5px;
+    }
+
+    input, label {
+        display: block;
+    }
+
+    select, label {
+        display: block;
+    }
+
+        
+}
