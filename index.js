@@ -36,7 +36,7 @@ function generateFoodUrl(ingredients) {
 
 function generateHeader() {
     return `<section>
-    <img src="images/podivore-logo.png" alt="Podivore" class="logo">
+    <img src="images/Podivore-logo.png" alt="Podivore" class="logo">
     <h2>Podcast perfect for cook time.</h2>
     <p>What is Podivore? Podivore is an app that will generate podcasts that are the length of time as a recipe.
         This app will let you choose what kind of cuisine you want, what kind of meal type that you want, input the ingridents that you have or want to use, and choose the genre of the podcast that you want to listen to.
