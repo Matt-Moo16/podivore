@@ -5,8 +5,6 @@ const podcastBaseUrl = 'https://listen-api.listennotes.com/api/v2/search'
 const podcastGenreUrl = 'https://listen-api.listennotes.com/api/v2/genres'
 const podcastApiKey = 'b97f13b83bf04b4e9f5b1cd691990094'
 
-const podcasts = []
-
 let recipesTime = 0
 
 function createCORSRequest(method, url) {
@@ -89,11 +87,10 @@ function fetchRecipe(ingredients) {
             alert('CORS not supported');
             return;
         }
-
+        // This acts as a Fetch request
         xhr.onload = () => {
             if (xhr.status >= 200 && xhr.status < 300) {
                 const parsedJson = JSON.parse(xhr.response)
-                console.log(parsedJson)
                 if (parsedJson.count === 0) {
                     
                     alert('No recipe available for this search. Please try another search.')
@@ -163,15 +160,13 @@ function generateRecipe(response) {
     }
     const recipeCode = `
         <div>
-        <h2>${response.hits[randomNum].recipe.label}</h2>
-        <h3>Total Cook Time: ${recipesTime}</h3>
-        <img src="${response.hits[randomNum].recipe.image}">
-        <ul class="ingredients">${ingredientsList}</ul>      
-        <a href="${response.hits[randomNum].recipe.url}" target="_blank" class="recipelink">Click Here To View The Recipe</a>
+            <h2>${response.hits[randomNum].recipe.label}</h2>
+            <h3>Total Cook Time: ${recipesTime}</h3>
+            <img src="${response.hits[randomNum].recipe.image}">
+            <ul class="ingredients">${ingredientsList}</ul>      
+            <a href="${response.hits[randomNum].recipe.url}" target="_blank" class="recipelink">Click Here To View The Recipe</a>
         </div>
     `
-
-    
     return recipeCode
 }
 
@@ -183,8 +178,6 @@ function generatePodcast(podcast) {
         <p class="description">${podcast.description_original}</p>
         <iframe src="${podcast.audio }" height="170px" loading="lazy" frameborder="0" scrolling="no"></iframe>   
     </article>`
-    
-
 }
 
 function displayLandingPage(genres) {
@@ -231,7 +224,6 @@ function handleSubmitButton() {
 function setUpUi() {
     fetchGenre().then(responseJson => displayLandingPage(responseJson.genres))
     handleSubmitButton()
-
 }
 
 $(setUpUi)
