@@ -1,7 +1,7 @@
 # Podivore 
 
 ## Link
-[Podivore](https://matt-moo16.github.io/api-capstone/)
+[Podivore](https://matt-moo16.github.io/podivore/)
 
 ## Screenshot
 ![Podivore Screenshot](https://user-images.githubusercontent.com/65912593/92316324-40e91d80-efc0-11ea-859f-4022dff048ae.png)
