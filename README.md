@@ -8,7 +8,7 @@
 
 ## About/Synopsis
 
-Podivore is an app that finds a random recipe for an inputted ingredient and will pair that recipe with a genred podcast search with the same length as the cook time of the recipe.
+Podivore is an app that finds a random recipe for an inputted ingredient and will pair that recipe with a genred podcast search with the same length as the cook time of the recipe!
 
 ## Languages Used
 
